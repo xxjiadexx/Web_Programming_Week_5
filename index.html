@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust Concepts Study - Option, Result & Templates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦀 Rust Concepts Study</h1>
+            <p>Master Option, Result, Unwrap/Wrap, and Template Engines</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="quiz">📝 Quiz Mode</button>
+            <button class="nav-tab" data-tab="flashcards">🃏 Flashcards</button>
+        </nav>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="section active">
+            <div class="quiz-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                
+                <div class="question-counter">
+                    <span id="question-number">1</span> / <span id="total-questions">12</span>
+                </div>
+
+                <div class="question-container">
+                    <div class="importance-badge" id="importance-badge" style="display: none;">
+                        ⭐ High Importance
+                    </div>
+                    <h2 id="question-text">Loading question...</h2>
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be dynamically generated -->
+                    </div>
+                </div>
+
+                <div class="quiz-controls">
+                    <button id="next-btn" class="btn btn-primary" disabled>Next Question</button>
+                    <button id="restart-btn" class="btn btn-secondary" style="display: none;">Restart Quiz</button>
+                </div>
+
+                <div class="score-container" id="score-container" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="score-display">
+                        <span id="final-score">0</span> / <span id="total-score">12</span>
+                    </div>
+                    <div class="score-percentage" id="score-percentage">0%</div>
+                    <div class="score-message" id="score-message"></div>
+                    <div class="high-importance-summary" id="high-importance-summary"></div>
+                </div>
+            </div>
+
+            <div class="explanation-container" id="explanation-container" style="display: none;">
+                <h3>💡 Explanation</h3>
+                <p id="explanation-text"></p>
+            </div>
+        </div>
+
+        <!-- Flashcards Section -->
+        <div id="flashcards-section" class="section">
+            <div class="flashcard-container">
+                <div class="flashcard-counter">
+                    <span id="card-number">1</span> / <span id="total-cards">12</span>
+                </div>
+                
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="card-importance-badge" id="card-importance-badge" style="display: none;">
+                                ⭐ High Importance
+                            </div>
+                            <h3>Question</h3>
+                            <p id="flashcard-question">Loading...</p>
+                            <div class="flip-hint">Click to reveal answer</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Answer</h3>
+                            <p id="flashcard-answer">Loading...</p>
+                            <div class="flip-hint">Click to see question</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-controls">
+                    <button id="prev-card" class="btn btn-secondary">← Previous</button>
+                    <button id="flip-card" class="btn btn-primary">Flip Card</button>
+                    <button id="next-card" class="btn btn-secondary">Next →</button>
+                </div>
+
+                <div class="flashcard-options">
+                    <button id="shuffle-cards" class="btn btn-outline">🔀 Shuffle Cards</button>
+                    <button id="important-only" class="btn btn-outline">⭐ Important Only</button>
+                    <button id="reset-cards" class="btn btn-outline">🔄 Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+    <script src="flashcards.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>
